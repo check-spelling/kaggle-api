@@ -279,7 +279,7 @@ class ApiClient(object):
         elif klass == datetime.date:
             return self.__deserialize_date(data)
         elif klass == datetime.datetime:
-            return self.__deserialize_datatime(data)
+            return self.__deserialize_datetime(data)
         else:
             return self.__deserialize_model(data, klass)
 
@@ -494,11 +494,11 @@ class ApiClient(object):
         else:
             return content_types[0]
 
-    def update_params_for_auth(self, headers, querys, auth_settings):
+    def update_params_for_auth(self, headers, queries, auth_settings):
         """Updates header and query params based on authentication setting.
 
         :param headers: Header parameters dict to be updated.
-        :param querys: Query parameters tuple list to be updated.
+        :param queries: Query parameters tuple list to be updated.
         :param auth_settings: Authentication setting identifiers list.
         """
         if not auth_settings:
@@ -512,7 +512,7 @@ class ApiClient(object):
                 elif auth_setting['in'] == 'header':
                     headers[auth_setting['key']] = auth_setting['value']
                 elif auth_setting['in'] == 'query':
-                    querys.append((auth_setting['key'], auth_setting['value']))
+                    queries.append((auth_setting['key'], auth_setting['value']))
                 else:
                     raise ValueError(
                         'Authentication token must be in `query` or `header`'
@@ -581,7 +581,7 @@ class ApiClient(object):
                 reason="Failed to parse `{0}` as date object".format(string)
             )
 
-    def __deserialize_datatime(self, string):
+    def __deserialize_datetime(self, string):
         """Deserializes string to datetime.
 
         The string should be in iso8601 datetime format.

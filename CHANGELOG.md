@@ -36,7 +36,7 @@ Release date: 8/30/19
 * Add vote count and usability rating to datasets listing
 * Add min and max dataset size filters to datasets listing
 * Add additional information to dataset metadata API
-* Allow updating dataset metdata
+* Allow updating dataset metadata
 
 #### 1.5.4
 Release date: 5/28/19
@@ -59,7 +59,7 @@ Release date: 12/5/18
 #### 1.5.1
 Release date: 12/5/18
 * Allow custom ca_cert files
-* Support uplodaing datasets with subfolders
+* Support uploading datasets with subfolders
 * Fix kaggle.json permissions warning
 
 #### 1.5.0
@@ -73,7 +73,7 @@ Release date: 8/28/18
 
 #### 1.4.7
 Release date: 8/28/18
-* Make dataset version `-p` argument actually optinal
+* Make dataset version `-p` argument actually optional
 * Don't require the `resources` field when updating a dataset
 * Don't automatically unzip datasets
 * Add an unzip option for dataset downloads
@@ -178,7 +178,7 @@ Release date: 5/18/18
 #### 1.3.6
 Release date: 5/7/18
 * Give the option to add tags to datasets.
-  * Known limitiation - you cannot delete tags through the API.  Those changes must be done through the website.
+  * Known limitation - you cannot delete tags through the API.  Those changes must be done through the website.
 
 #### 1.3.5
 Release date: 5/4/18
